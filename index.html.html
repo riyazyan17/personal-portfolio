@@ -1,0 +1,936 @@
+<<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Riyaz Khatiwada — BBA student interested in business, marketing, technology and continuous learning.">
+    <title>Riyaz Khatiwada | BBA Student & Business Enthusiast</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background: #f3f4f6;
+            color: #0f172a;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link.active {
+            color: #2563eb;
+        }
+
+        /* ===== UNDER CONSTRUCTION SCROLLING NOTICE ===== */
+        .construction-ticker {
+            flex: 1;
+            min-width: 0;
+            margin: 0 28px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .construction-track {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: constructionScroll 16s linear infinite;
+        }
+
+        .construction-message {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .01em;
+        }
+
+        .construction-message i {
+            color: #2563eb;
+            font-size: 12px;
+        }
+
+        .construction-dot {
+            margin: 0 24px;
+            color: #94a3b8;
+        }
+
+        @keyframes constructionScroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (max-width: 767px) { .construction-ticker { display:flex !important; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .construction-track {
+                animation: none;
+            }
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        /* Professional hover effects for cards, images and interactive boxes */
+        .hover-lift {
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease,
+                        background-color .3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, .10);
+            border-color: rgba(37, 99, 235, .35);
+        }
+
+        .hover-image {
+            transition: transform .4s ease, filter .4s ease, box-shadow .4s ease;
+        }
+
+        .hover-image:hover {
+            transform: scale(1.035);
+            filter: brightness(1.03);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, .14);
+        }
+
+        .institution-link {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .institution-link:hover {
+            color: #2563eb;
+            transform: translateX(3px);
+        }
+    
+/* ===== COMPLETE PROFESSIONAL HOVER SYSTEM ===== */
+.hover-lift,
+.hover-image,
+.social-link,
+.contact-item,
+.project-tag,
+button,
+input,
+textarea,
+select,
+.nav-link,
+.hero-link,
+.institution-link,
+.rounded-2xl,
+.rounded-xl,
+.rounded-lg {
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease,
+        background-color .28s ease,
+        color .28s ease,
+        filter .28s ease,
+        opacity .28s ease;
+}
+
+.hover-lift:hover,
+.contact-item:hover,
+.rounded-2xl:hover,
+.rounded-xl:hover,
+.rounded-lg:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, .12);
+    border-color: rgba(37, 99, 235, .35);
+}
+
+.hover-image:hover {
+    transform: scale(1.04);
+    filter: brightness(1.04);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, .15);
+}
+
+.social-link:hover,
+.nav-link:hover,
+.hero-link:hover,
+.institution-link:hover {
+    transform: translateY(-2px);
+}
+
+.social-link:hover {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+}
+
+.project-tag:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, .10);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, .16);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: rgba(37, 99, 235, .45);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, .07);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+.institution-link:hover {
+    color: #2563eb;
+    transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hover-lift,
+    .hover-image,
+    .social-link,
+    .contact-item,
+    .project-tag,
+    button,
+    input,
+    textarea,
+    select,
+    .nav-link,
+    .hero-link,
+    .institution-link,
+    .rounded-2xl,
+    .rounded-xl,
+    .rounded-lg {
+        transition: none;
+    }
+}
+
+
+        /* ===== MOBILE / RESPONSIVE FIXES ===== */
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Keep the mobile menu button completely separate from the desktop Contact link. */
+        header > div:first-child {
+            min-width: 0;
+        }
+
+        @media (max-width: 767px) {
+            header {
+                z-index: 100;
+            }
+
+            header > div:first-child {
+                height: 68px;
+                padding-left: 16px;
+                padding-right: 16px;
+                gap: 10px;
+            }
+
+            header > div:first-child > a {
+                flex: 0 0 auto;
+                min-width: 0;
+            }
+
+            header > div:first-child > a img {
+                max-width: 76px !important;
+                height: 42px !important;
+                width: auto !important;
+            }
+
+            /* Hide the desktop navigation/contact button on phones. */
+            header nav {
+                display: none !important;
+            }
+
+            /* Show only the hamburger as the right-side control. */
+            header > div:first-child > button {
+                display: flex !important;
+                flex: 0 0 auto;
+                width: 42px;
+                height: 42px;
+                padding: 0;
+                margin-left: auto;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                transform: none !important;
+            }
+
+            header > div:first-child > button:hover {
+                transform: none !important;
+            }
+
+            #mobile-menu {
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-height: calc(100vh - 68px);
+                overflow-y: auto;
+                padding: 10px 16px 16px;
+                box-shadow: 0 12px 24px rgba(15, 23, 42, .08);
+            }
+
+            #mobile-menu a {
+                display: block;
+                width: 100%;
+                padding: 12px 14px !important;
+                border-radius: 9px;
+                transform: none !important;
+            }
+
+            #mobile-menu a:hover {
+                transform: none !important;
+                background: #eff6ff;
+            }
+
+            /* Hero: image first, text second on phones. */
+            #home {
+                min-height: auto;
+                padding-top: 92px;
+                padding-bottom: 64px;
+            }
+
+            #home > div {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            #home > div > div {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 34px !important;
+            }
+
+            #home > div > div > div:first-child {
+                order: 2;
+                width: 100%;
+                text-align: left;
+            }
+
+            #home > div > div > div:last-child {
+                order: 1;
+                width: 100%;
+                padding-top: 4px;
+            }
+
+            #home > div > div > div:last-child > div {
+                max-width: 290px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #home h1 {
+                font-size: clamp(2.45rem, 12vw, 3.5rem);
+                line-height: 1.02;
+            }
+
+            #home .text-xl {
+                font-size: 1.15rem;
+                line-height: 1.45;
+            }
+
+            #home .text-base {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            #home .flex.flex-wrap.gap-4 {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #home .flex.flex-wrap.gap-4 a {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            /* Prevent the floating location badge from causing horizontal overflow. */
+            #home .absolute.-bottom-5.-left-5 {
+                left: -4px;
+                bottom: -10px;
+                padding: 10px 13px;
+                border-radius: 10px;
+                max-width: calc(100% + 8px);
+            }
+
+            #home .absolute.-bottom-5.-left-5 p:last-child {
+                font-size: .8rem;
+            }
+
+            /* Consistent mobile section spacing. */
+            section {
+                scroll-margin-top: 76px;
+            }
+
+            .max-w-6xl,
+            .max-w-5xl {
+                width: 100%;
+            }
+
+            section > div {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            h2 {
+                font-size: clamp(2rem, 9vw, 2.8rem) !important;
+                line-height: 1.12;
+            }
+
+            /* Make cards comfortable and avoid cramped text. */
+            .grid {
+                min-width: 0;
+            }
+
+            article,
+            form {
+                min-width: 0;
+            }
+
+            /* Education location text wraps instead of pushing the page sideways. */
+            #education .whitespace-nowrap {
+                white-space: normal;
+            }
+
+            /* Contact form stays inside the viewport. */
+            #contact .grid {
+                gap: 32px;
+            }
+
+            #contact form {
+                padding: 22px 18px !important;
+            }
+
+            #contact input,
+            #contact textarea {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                font-size: 16px; /* prevents iOS zoom */
+            }
+
+            #contact textarea {
+                min-height: 130px;
+            }
+
+            #contact button[type="submit"] {
+                width: 100%;
+                min-height: 50px;
+            }
+
+            footer {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+        }
+
+        body.search-open { overflow:hidden; }
+        
+            header > div:first-child > button {
+                display: none !important;
+            }
+        }
+
+    
+/* ===== PROFESSIONAL MOBILE EXPERIENCE / DARK MODE / SEARCH ===== */
+.header-actions{flex:0 0 auto}.theme-toggle,.search-toggle{width:40px;height:40px;border:1px solid #e2e8f0;border-radius:10px;background:#f8f8f7;color:#334155;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.theme-toggle:hover,.search-toggle:hover{background:#eff6ff;color:#2563eb}
+.search-panel{position:fixed;inset:0;z-index:100;background:rgba(15,23,42,.42);backdrop-filter:blur(8px);padding:90px 20px 20px}.search-panel.hidden{display:none}.search-panel-inner{width:min(680px,100%);margin:0 auto;background:#f8f8f7;border:1px solid #e2e8f0;border-radius:18px;box-shadow:0 25px 70px rgba(15,23,42,.22);overflow:hidden}.search-box-wrap{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #e2e8f0}.search-box-wrap>i{color:#64748b}.search-box-wrap input{flex:1;min-width:0;border:0!important;outline:0!important;box-shadow:none!important;background:transparent;font-size:16px;color:#0f172a}.search-box-wrap button{width:36px;height:36px;border:0;background:transparent;color:#64748b;box-shadow:none}.search-results{max-height:min(55vh,420px);overflow:auto;padding:10px}.search-result{display:block;width:100%;text-align:left;padding:12px 14px;border-radius:10px;border:0;background:transparent;color:#0f172a;cursor:pointer}.search-result:hover{background:#eff6ff;transform:none;box-shadow:none}.search-result strong{display:block;font-size:14px}.search-result span{display:block;margin-top:3px;font-size:12px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.search-hint{padding:14px;color:#64748b;font-size:13px;line-height:1.5}
+/* Logo adapts to the selected theme. Works with transparent or white-background PNG logos. */
+.logo-image {
+    mix-blend-mode: multiply;
+    transition: filter .25s ease, mix-blend-mode .25s ease, transform .25s ease;
+}
+body.dark-mode .logo-image {
+    filter: invert(1);
+    mix-blend-mode: screen;
+}
+
+body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background:rgba(11,17,32,.94)!important;border-color:#1e293b!important}body.dark-mode .theme-toggle,body.dark-mode .search-toggle{background:#111827;color:#cbd5e1;border-color:#334155}body.dark-mode .construction-message{color:#cbd5e1}body.dark-mode .construction-dot{color:#64748b}body.dark-mode .construction-message i{color:#60a5fa}body.dark-mode .hero-grid{background-image:linear-gradient(rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.055) 1px,transparent 1px)}body.dark-mode .bg-\[\#f8f8f7\]{background-color:#0f172a!important}body.dark-mode .bg-\[\#f1f2f3\]{background-color:#111827!important}body.dark-mode .text-slate-950{color:#f8fafc!important}body.dark-mode .text-slate-900{color:#f1f5f9!important}body.dark-mode .text-slate-800{color:#e2e8f0!important}body.dark-mode .text-slate-700{color:#cbd5e1!important}body.dark-mode .text-slate-600{color:#94a3b8!important}body.dark-mode .text-slate-500{color:#64748b!important}body.dark-mode .border-slate-200{border-color:#263449!important}body.dark-mode .border-slate-300{border-color:#334155!important}body.dark-mode .search-panel-inner{background:#0f172a;border-color:#334155}body.dark-mode .search-box-wrap{border-color:#334155}body.dark-mode .search-box-wrap input{color:#f8fafc}body.dark-mode .search-result{color:#f1f5f9}body.dark-mode .search-result:hover{background:#172554}body.dark-mode .search-result span,body.dark-mode .search-hint{color:#94a3b8}body.dark-mode #mobile-menu{background:#0f172a!important;border-color:#1e293b!important}body.dark-mode #mobile-menu a{color:#e2e8f0}body.dark-mode #mobile-menu a:hover{background:#172554}body.dark-mode input,body.dark-mode textarea{background:#0b1120!important;color:#f8fafc!important;border-color:#334155!important}body.dark-mode input::placeholder,body.dark-mode textarea::placeholder{color:#64748b}
+@media(max-width:767px){body{-webkit-text-size-adjust:100%}header{height:98px}header>div:first-child{height:68px;padding:0 14px;gap:7px}header>div:first-child>a img{max-width:72px!important;height:40px!important}.header-actions{margin-left:auto!important;gap:5px}.theme-toggle,.search-toggle{width:37px;height:37px;border-radius:10px}header>div:first-child>button{width:37px;height:37px}.construction-ticker{display:flex!important;position:absolute;top:68px;left:0;right:0;width:100%;height:30px;margin:0;padding:0 10px;background:#f8f8f7;border-top:1px solid #e2e8f0;align-items:center}.construction-track{animation-duration:11s}.construction-message{font-size:11px;gap:7px}.construction-message i{font-size:10px}.construction-dot{margin:0 18px}#mobile-menu{top:98px!important;max-height:calc(100vh - 98px);padding:10px 14px 16px}#home{padding-top:122px!important;padding-bottom:58px!important}#home>div{padding-left:16px!important;padding-right:16px!important}#home>div>div{gap:27px!important}#home>div>div>div:last-child>div{max-width:270px}#home h1{font-size:clamp(2.5rem,13vw,3.4rem);letter-spacing:-.04em}#home .text-xl{font-size:1.05rem;line-height:1.5}#home .text-base{font-size:.97rem;line-height:1.7}#home .flex.flex-wrap.gap-4{margin-top:24px;gap:9px}#home .flex.flex-wrap.gap-4 a{min-height:48px;align-items:center}section{scroll-margin-top:108px}section>div{padding-left:16px!important;padding-right:16px!important}section.py-24,section.py-20{padding-top:68px!important;padding-bottom:68px!important}h2{font-size:clamp(1.9rem,9vw,2.6rem)!important}.grid{gap:14px!important}article,.rounded-xl{border-radius:16px}article .p-7,#education .p-7{padding:20px!important}#contact form{padding:20px!important;border-radius:16px}#contact .grid{gap:28px!important}#contact input,#contact textarea{min-height:48px}#contact textarea{min-height:130px}#contact button[type=submit]{min-height:50px}.search-panel{padding:82px 12px 12px}.search-panel-inner{border-radius:16px}.search-results{max-height:60vh}}
+
+</style>
+</head>
+
+<body class="selection:bg-blue-600 selection:text-white">
+
+<!-- NAVIGATION -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#f8f8f7]/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#home" class="hover-lift flex items-center shrink-0" aria-label="Riyaz Khatiwada home">
+            <img src="logo.png"
+                 alt="Riyaz Khatiwada" class="hover-image logo-image h-13 w-auto object-contain"
+                 style="max-width: 90px;">
+        </a>
+
+        <!-- Professional scrolling under-construction notice -->
+        <div class="construction-ticker" aria-label="Website status">
+            <div class="construction-track">
+                <span class="construction-message">
+                    <i class="fa-solid fa-hammer"></i>
+                    The website is under construction — new updates are coming soon.
+                </span>
+                <span class="construction-dot">•</span>
+                <span class="construction-message">
+                    <i class="fa-solid fa-hammer"></i>
+                    The website is under construction — new updates are coming soon.
+                </span>
+            </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-1">
+            <a href="#home" class="nav-link px-4 py-2 rounded-lg hover-lift text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">Home</a>
+            <a href="#about" class="nav-link px-4 py-2 rounded-lg hover-lift text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">About</a>
+            <a href="#skills" class="nav-link px-4 py-2 rounded-lg hover-lift text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">Skills</a>
+            <a href="#projects" class="nav-link px-4 py-2 rounded-lg hover-lift text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">Projects</a>
+            <a href="#education" class="nav-link px-4 py-2 rounded-lg hover-lift text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition">Education</a>
+            <a href="#contact" class="ml-2 px-5 py-2.5 rounded-lg hover-lift text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition shadow-sm">Contact</a>
+        </nav>
+
+        <div class="header-actions flex items-center gap-2 ml-2">
+            <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+            <button type="button" class="search-toggle" aria-label="Search website" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <button onclick="toggleMobileMenu()" class="hover-lift md:hidden p-2.5 rounded-lg bg-slate-100 text-slate-800" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#f8f8f7] border-t border-slate-200 px-6 py-4">
+        <div class="flex flex-col gap-1">
+            <a class="hover-lift py-3 text-sm font-medium" href="#home" onclick="toggleMobileMenu()">Home</a>
+            <a class="hover-lift py-3 text-sm font-medium" href="#about" onclick="toggleMobileMenu()">About</a>
+            <a class="hover-lift py-3 text-sm font-medium" href="#skills" onclick="toggleMobileMenu()">Skills</a>
+            <a class="hover-lift py-3 text-sm font-medium" href="#projects" onclick="toggleMobileMenu()">Projects</a>
+            <a class="hover-lift py-3 text-sm font-medium" href="#education" onclick="toggleMobileMenu()">Education</a>
+            <a class="hover-lift py-3 text-sm font-semibold text-blue-600" href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </div>
+</header>
+
+<!-- SEARCH PANEL -->
+<div id="search-panel" class="search-panel hidden" aria-hidden="true">
+  <div class="search-panel-inner">
+    <div class="search-box-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="site-search" type="search" placeholder="Search this website..." aria-label="Search this website" autocomplete="off">
+      <button type="button" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="search-results" class="search-results"><p class="search-hint">Search About, Skills, Projects, Education, Interests or Contact.</p></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen pt-28 pb-20 flex items-center hero-grid">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="grid lg:grid-cols-12 gap-14 items-center">
+            <div class="lg:col-span-7 reveal">
+                <p class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                    BBA Student · Business & Technology
+                </p>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 leading-[1.05]">
+                    Riyaz<br class="hidden sm:block"> Khatiwada
+                </h1>
+
+                <p class="mt-7 text-xl sm:text-2xl font-semibold text-slate-700 max-w-2xl">
+                    Building business knowledge, practical skills, and a broader perspective.
+                </p>
+
+                <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                    I’m a Bachelor of Business Administration student interested in business strategy,
+                    marketing, technology, and continuous learning. I enjoy turning ideas into practical
+                    projects and developing skills that create meaningful value.
+                </p>
+
+                <div class="mt-9 flex flex-wrap gap-4">
+                    <a href="#projects" class="px-6 py-3.5 rounded-lg hover-lift bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-sm">
+                        View My Work <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="px-6 py-3.5 rounded-lg hover-lift border border-slate-300 bg-[#f8f8f7] text-slate-800 font-semibold hover:border-blue-500 hover:text-blue-600 transition">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center reveal">
+                <div class="relative w-full max-w-sm">
+                    <div class="absolute -inset-4 bg-blue-600/10 rounded-3xl"></div>
+                    <div class="relative bg-[#f8f8f7] p-3 rounded-3xl border border-slate-200 shadow-xl">
+                        <img src="photo.png"
+                             alt="Riyaz Khatiwada"
+                             class="w-full aspect-square object-cover rounded-2xl hover-image"
+                             onerror="this.src='image.png'">
+                    </div>
+                    <div class="absolute -bottom-5 -left-5 bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift px-5 py-4 shadow-lg">
+                        <p class="text-xs text-slate-500">Based in</p>
+                        <p class="font-bold text-slate-900">Birtamod, Nepal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-[#f8f8f7] border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl reveal">
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-600">About</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">A student focused on growth and practical learning.</h2>
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+                I see professional development as a continuous process of learning, applying knowledge,
+                and improving through experience. As a BBA student, I’m developing a foundation in
+                business management while exploring how marketing, technology, and ideas connect in the
+                real world.
+            </p>
+            <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+                Beyond academics, I enjoy football, cricket, and travel. These interests keep me curious,
+                active, and open to different experiences and perspectives.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            <div class="p-5 rounded-xl hover-lift border border-slate-200 bg-[#f1f2f3] reveal hover-lift">
+                <i class="fa-solid fa-graduation-cap text-blue-600 text-lg"></i>
+                <p class="mt-4 text-xs uppercase tracking-wide text-slate-500">Education</p>
+                <p class="mt-1 font-bold">BBA Student</p>
+            </div>
+            <div class="p-5 rounded-xl hover-lift border border-slate-200 bg-[#f1f2f3] reveal">
+                <i class="fa-solid fa-bullseye text-blue-600 text-lg"></i>
+                <p class="mt-4 text-xs uppercase tracking-wide text-slate-500">Focus</p>
+                <p class="mt-1 font-bold">Business & Marketing</p>
+            </div>
+            <div class="p-5 rounded-xl hover-lift border border-slate-200 bg-[#f1f2f3] reveal">
+                <i class="fa-solid fa-laptop-code text-blue-600 text-lg"></i>
+                <p class="mt-4 text-xs uppercase tracking-wide text-slate-500">Interest</p>
+                <p class="mt-1 font-bold">Technology</p>
+            </div>
+            <div class="p-5 rounded-xl hover-lift border border-slate-200 bg-[#f1f2f3] reveal">
+                <i class="fa-solid fa-compass text-blue-600 text-lg"></i>
+                <p class="mt-4 text-xs uppercase tracking-wide text-slate-500">Personal</p>
+                <p class="mt-1 font-bold">Sports & Travel</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 bg-[#f1f2f3] border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl reveal">
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-600">Capabilities</p>
+            <h2 class="mt-3 text-4xl font-extrabold tracking-tight">Skills & Areas of Interest</h2>
+            <p class="mt-4 text-slate-600">A developing professional skill set shaped by business studies, projects, and independent learning.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift p-6 reveal hover-lift">
+                <div class="w-11 h-11 rounded-lg hover-lift bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="mt-5 font-bold text-lg">Business</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">Business management, operations, organizational strategy, and practical analysis.</p>
+            </div>
+
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift p-6 reveal">
+                <div class="w-11 h-11 rounded-lg hover-lift bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h3 class="mt-5 font-bold text-lg">Marketing</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">Interest in marketing strategy, customer understanding, communication, and brand development.</p>
+            </div>
+
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift p-6 reveal">
+                <div class="w-11 h-11 rounded-lg hover-lift bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="mt-5 font-bold text-lg">Research</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">Academic research, information gathering, analysis, and presenting ideas clearly.</p>
+            </div>
+
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift p-6 reveal">
+                <div class="w-11 h-11 rounded-lg hover-lift bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i class="fa-solid fa-computer"></i>
+                </div>
+                <h3 class="mt-5 font-bold text-lg">Technology</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">Curiosity about digital tools and how technology can support modern business.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 bg-[#f8f8f7]">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl reveal">
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-600">Selected Work</p>
+            <h2 class="mt-3 text-4xl font-extrabold tracking-tight">Projects & Academic Work</h2>
+            <p class="mt-4 text-slate-600">
+                Examples of work that demonstrate how I apply business concepts and develop practical skills.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
+            <article class="rounded-2xl hover-lift border border-slate-200 overflow-hidden bg-[#f1f2f3] reveal hover-lift">
+                <div class="h-2 bg-blue-600"></div>
+                <div class="p-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-blue-600">Marketing Analysis</p>
+                    <h3 class="mt-3 text-2xl font-bold">Vianet Communication Pvt. Ltd.</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        An academic analysis of the company's marketing initiative, developed as part of
+                        BBA 1223: Principles of Marketing.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">Marketing</span>
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">Business Analysis</span>
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">Academic Project</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="rounded-2xl hover-lift border border-slate-200 overflow-hidden bg-[#f1f2f3] reveal hover-lift">
+                <div class="h-2 bg-slate-800"></div>
+                <div class="p-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-600">Personal Project</p>
+                    <h3 class="mt-3 text-2xl font-bold">Personal Portfolio Website</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        A personal web portfolio designed to present my academic background, interests,
+                        capabilities, and developing professional identity.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">HTML</span>
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">Tailwind CSS</span>
+                        <span class="px-3 py-1 rounded-full bg-[#f8f8f7] border border-slate-200 text-xs font-medium">Web Design</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-24 bg-[#f1f2f3] border-y border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center reveal">
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-600">Academic Background</p>
+            <h2 class="mt-3 text-4xl font-extrabold tracking-tight">Education</h2>
+        </div>
+
+        <div class="mt-12 space-y-5">
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-2xl hover-lift p-7 reveal hover-lift">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Present</span>
+                        <h3 class="mt-2 text-xl font-bold">Bachelor of Business Administration (BBA)</h3>
+                        <p class="mt-1 font-medium text-slate-700"><a href="https://lincolnbalmiki.edu.np/" target="_blank" rel="noopener noreferrer" class="institution-link" aria-label="Visit Balmiki Lincoln College website">Balmiki Lincoln College</a></p>
+                        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                            Pursuing comprehensive studies in business management, operations, and organizational strategy.
+                        </p>
+                    </div>
+                    <span class="text-sm text-slate-500 whitespace-nowrap">Birtamod, Nepal</span>
+                </div>
+            </div>
+
+            <div class="bg-[#f8f8f7] border border-slate-200 rounded-2xl hover-lift p-7 reveal hover-lift">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Completed</span>
+                        <h3 class="mt-2 text-xl font-bold">Higher Secondary Education (+12)</h3>
+                        <p class="mt-1 font-medium text-slate-700"><a href="https://www.mohanmaya.edu.np/" target="_blank" rel="noopener noreferrer" class="institution-link" aria-label="Visit Mohanmaya Secondary School website">Mohanmaya Secondary School</a></p>
+                        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                            Completed higher secondary education and developed a strong academic foundation.
+                        </p>
+                    </div>
+                    <span class="text-sm text-slate-500 whitespace-nowrap">Birtamod, Nepal</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTERESTS -->
+<section class="py-20 bg-[#f8f8f7]">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
+            <div>
+                <p class="text-sm font-bold uppercase tracking-widest text-blue-600">Beyond Academics</p>
+                <h2 class="mt-3 text-3xl font-extrabold">Interests</h2>
+            </div>
+            <p class="max-w-xl text-slate-600">
+                Sports and travel are part of how I stay active, curious, and connected with different experiences.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4 mt-10">
+            <div class="p-6 rounded-xl hover-lift border border-slate-200 reveal hover-lift">
+                <i class="fa-solid fa-futbol text-blue-600"></i>
+                <h3 class="mt-4 font-bold">Football</h3>
+                <p class="mt-2 text-sm text-slate-600">Following football and major competitions.</p>
+            </div>
+            <div class="p-6 rounded-xl hover-lift border border-slate-200 reveal hover-lift">
+                <i class="fa-solid fa-baseball-bat-ball text-blue-600"></i>
+                <h3 class="mt-4 font-bold">Cricket</h3>
+                <p class="mt-2 text-sm text-slate-600">Following cricket and enjoying the sport.</p>
+            </div>
+            <div class="p-6 rounded-xl hover-lift border border-slate-200 reveal hover-lift">
+                <i class="fa-solid fa-plane text-blue-600"></i>
+                <h3 class="mt-4 font-bold">Travel</h3>
+                <p class="mt-2 text-sm text-slate-600">Exploring places, cultures, and new experiences.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-slate-950 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-14">
+            <div class="lg:col-span-5 reveal">
+                <p class="text-sm font-bold uppercase tracking-widest text-blue-400">Contact</p>
+                <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">Let’s connect.</h2>
+                <p class="mt-5 text-slate-400 leading-relaxed">
+                    I’m open to connecting with people who share an interest in business, learning,
+                    technology, and meaningful opportunities.
+                </p>
+
+                <div class="mt-8 space-y-5">
+                    <a href="mailto:riyazkhatiwada14@gmail.com" class="hover-lift flex items-center gap-4 group">
+                        <span class="w-11 h-11 rounded-lg bg-[#f8f8f7]/10 flex items-center justify-center text-blue-400">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <span>
+                            <span class="block text-xs text-slate-500">Email</span>
+                            <span class="font-medium group-hover:text-blue-400 transition">riyazkhatiwada14@gmail.com</span>
+                        </span>
+                    </a>
+
+                    <a href="tel:9764478727" class="hover-lift flex items-center gap-4 group">
+                        <span class="w-11 h-11 rounded-lg bg-[#f8f8f7]/10 flex items-center justify-center text-blue-400">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <span>
+                            <span class="block text-xs text-slate-500">Phone</span>
+                            <span class="font-medium group-hover:text-blue-400 transition">9764478727</span>
+                        </span>
+                    </a>
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-11 h-11 rounded-lg bg-[#f8f8f7]/10 flex items-center justify-center text-blue-400">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <span>
+                            <span class="block text-xs text-slate-500">Location</span>
+                            <span class="font-medium">Birtamod, Jhapa, Nepal</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex gap-3">
+                    <a href="https://www.instagram.com/riyazyan_?stkn=eTh4Y2N5OHFzbndy" target="_blank" rel="noopener noreferrer"
+                       class="w-11 h-11 rounded-lg hover-lift bg-[#f8f8f7]/10 flex items-center justify-center hover:bg-blue-600 transition" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Riyazyann" target="_blank" rel="noopener noreferrer"
+                       class="w-11 h-11 rounded-lg hover-lift bg-[#f8f8f7]/10 flex items-center justify-center hover:bg-blue-600 transition" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 reveal">
+                <form onsubmit="event.preventDefault(); alert('Thank you for reaching out!');"
+                      class="bg-[#f8f8f7] text-slate-900 rounded-2xl hover-lift p-7 sm:p-9 space-y-5 hover-lift">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Name</label>
+                            <input type="text" placeholder="Your name" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" placeholder="you@example.com" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Subject</label>
+                        <input type="text" placeholder="How can I help?" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Message</label>
+                        <textarea rows="5" placeholder="Write your message..." required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500 resize-none"></textarea>
+                    </div>
+
+                    <button class="hover-lift w-full py-3.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition" type="submit">
+                        Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-7 bg-slate-950 border-t border-white/10 text-center text-sm text-slate-500">
+    <p>© 2026 Riyaz Khatiwada. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const menu=document.getElementById('mobile-menu'), menuBtn=document.querySelector('header > div:first-child > button');
+  const themeBtn=document.querySelector('.theme-toggle'), searchBtn=document.querySelector('.search-toggle');
+  const panel=document.getElementById('search-panel'), input=document.getElementById('site-search'), results=document.getElementById('search-results');
+  const closeMenu=()=>{if(menu)menu.classList.add('hidden')};
+  if(menuBtn)menuBtn.addEventListener('click',e=>{e.stopPropagation();menu.classList.toggle('hidden')});
+  if(menu)menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('click',e=>{if(innerWidth<768&&menu&&menuBtn&&!menu.contains(e.target)&&!menuBtn.contains(e.target))closeMenu()});
+  addEventListener('resize',()=>{if(innerWidth>=768)closeMenu()});
+  function themeIcon(d){if(!themeBtn)return;themeBtn.innerHTML=d?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';themeBtn.title=d?'Switch to light mode':'Switch to dark mode';themeBtn.setAttribute('aria-label',themeBtn.title)}
+  const dark=localStorage.getItem('riyaz-theme')==='dark';document.body.classList.toggle('dark-mode',dark);themeIcon(dark);
+  if(themeBtn)themeBtn.addEventListener('click',()=>{const d=document.body.classList.toggle('dark-mode');localStorage.setItem('riyaz-theme',d?'dark':'light');themeIcon(d)});
+  function closeSearch(){if(panel){panel.classList.add('hidden');panel.setAttribute('aria-hidden','true');document.body.classList.remove('search-open')}}
+  function openSearch(){if(panel){panel.classList.remove('hidden');panel.setAttribute('aria-hidden','false');document.body.classList.add('search-open');setTimeout(()=>input&&input.focus(),50)}}
+  if(searchBtn)searchBtn.addEventListener('click',e=>{e.stopPropagation();openSearch()});
+  if(panel){const x=panel.querySelector('.search-box-wrap button');if(x)x.addEventListener('click',closeSearch);panel.addEventListener('click',e=>{if(e.target===panel)closeSearch()})}
+  const data=Array.from(document.querySelectorAll('section[id]')).map(s=>({id:s.id,title:(s.querySelector('h1,h2,h3')||{}).textContent?.trim()||s.id,text:(s.innerText||'').replace(/\s+/g,' ').trim()}));
+  function search(q){if(!results)return;q=q.trim().toLowerCase();if(!q){results.innerHTML='<p class="search-hint">Search About, Skills, Projects, Education, Interests or Contact.</p>';return}const m=data.filter(a=>a.text.toLowerCase().includes(q));if(!m.length){results.innerHTML='<p class="search-hint">No matching section found. Try another keyword.</p>';return}results.innerHTML=m.map(a=>'<button class="search-result" type="button" data-target="'+a.id+'"><strong>'+a.title+'</strong><span>'+a.text.slice(Math.max(0,a.text.toLowerCase().indexOf(q)-30),a.text.toLowerCase().indexOf(q)+q.length+70)+'</span></button>').join('');results.querySelectorAll('.search-result').forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});closeSearch()}))}
+  if(input)input.addEventListener('input',()=>search(input.value));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();panel?.classList.contains('hidden')?openSearch():closeSearch()}});
+  if('IntersectionObserver'in window){const o=new IntersectionObserver((es,ob)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');ob.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>o.observe(e))}else document.querySelectorAll('.reveal').forEach(e=>e.classList.add('active'));
+  const sections=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nav-link');addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(scrollY>=s.offsetTop-140)c=s.id});links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+c))},{passive:true});
+});
+</script>
+</body>
+</html>
