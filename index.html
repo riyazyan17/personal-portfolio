@@ -458,8 +458,6 @@ select:focus {
          body.search-open {
     overflow: hidden;
 }
-            }
-        }
 
     
 /* ===== PROFESSIONAL MOBILE EXPERIENCE / DARK MODE / SEARCH ===== */
@@ -477,6 +475,212 @@ body.dark-mode .logo-image {
 
 body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background:rgba(11,17,32,.94)!important;border-color:#1e293b!important}body.dark-mode .theme-toggle,body.dark-mode .search-toggle{background:#111827;color:#cbd5e1;border-color:#334155}body.dark-mode .construction-message{color:#cbd5e1}body.dark-mode .construction-dot{color:#64748b}body.dark-mode .construction-message i{color:#60a5fa}body.dark-mode .hero-grid{background-image:linear-gradient(rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.055) 1px,transparent 1px)}body.dark-mode .bg-\[\#f8f8f7\]{background-color:#0f172a!important}body.dark-mode .bg-\[\#f1f2f3\]{background-color:#111827!important}body.dark-mode .text-slate-950{color:#f8fafc!important}body.dark-mode .text-slate-900{color:#f1f5f9!important}body.dark-mode .text-slate-800{color:#e2e8f0!important}body.dark-mode .text-slate-700{color:#cbd5e1!important}body.dark-mode .text-slate-600{color:#94a3b8!important}body.dark-mode .text-slate-500{color:#64748b!important}body.dark-mode .border-slate-200{border-color:#263449!important}body.dark-mode .border-slate-300{border-color:#334155!important}body.dark-mode .search-panel-inner{background:#0f172a;border-color:#334155}body.dark-mode .search-box-wrap{border-color:#334155}body.dark-mode .search-box-wrap input{color:#f8fafc}body.dark-mode .search-result{color:#f1f5f9}body.dark-mode .search-result:hover{background:#172554}body.dark-mode .search-result span,body.dark-mode .search-hint{color:#94a3b8}body.dark-mode #mobile-menu{background:#0f172a!important;border-color:#1e293b!important}body.dark-mode #mobile-menu a{color:#e2e8f0}body.dark-mode #mobile-menu a:hover{background:#172554}body.dark-mode input,body.dark-mode textarea{background:#0b1120!important;color:#f8fafc!important;border-color:#334155!important}body.dark-mode input::placeholder,body.dark-mode textarea::placeholder{color:#64748b}
 @media(max-width:767px){body{-webkit-text-size-adjust:100%}header{height:98px}header>div:first-child{height:68px;padding:0 14px;gap:7px}header>div:first-child>a img{max-width:72px!important;height:40px!important}.header-actions{margin-left:auto!important;gap:5px}.theme-toggle,.search-toggle{width:37px;height:37px;border-radius:10px}header>div:first-child>button{width:37px;height:37px}.construction-ticker{display:flex!important;position:absolute;top:68px;left:0;right:0;width:100%;height:30px;margin:0;padding:0 10px;background:#f8f8f7;border-top:1px solid #e2e8f0;align-items:center}.construction-track{animation-duration:11s}.construction-message{font-size:11px;gap:7px}.construction-message i{font-size:10px}.construction-dot{margin:0 18px}#mobile-menu{top:98px!important;max-height:calc(100vh - 98px);padding:10px 14px 16px}#home{padding-top:122px!important;padding-bottom:58px!important}#home>div{padding-left:16px!important;padding-right:16px!important}#home>div>div{gap:27px!important}#home>div>div>div:last-child>div{max-width:270px}#home h1{font-size:clamp(2.5rem,13vw,3.4rem);letter-spacing:-.04em}#home .text-xl{font-size:1.05rem;line-height:1.5}#home .text-base{font-size:.97rem;line-height:1.7}#home .flex.flex-wrap.gap-4{margin-top:24px;gap:9px}#home .flex.flex-wrap.gap-4 a{min-height:48px;align-items:center}section{scroll-margin-top:108px}section>div{padding-left:16px!important;padding-right:16px!important}section.py-24,section.py-20{padding-top:68px!important;padding-bottom:68px!important}h2{font-size:clamp(1.9rem,9vw,2.6rem)!important}.grid{gap:14px!important}article,.rounded-xl{border-radius:16px}article .p-7,#education .p-7{padding:20px!important}#contact form{padding:20px!important;border-radius:16px}#contact .grid{gap:28px!important}#contact input,#contact textarea{min-height:48px}#contact textarea{min-height:130px}#contact button[type=submit]{min-height:50px}.search-panel{padding:82px 12px 12px}.search-panel-inner{border-radius:16px}.search-results{max-height:60vh}}
+
+
+        /* Contact form success/error popup */
+        body.popup-open {
+            overflow: hidden;
+        }
+
+        .contact-popup {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, .48);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .contact-popup.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .contact-popup-card {
+            position: relative;
+            width: min(100%, 440px);
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 34px 30px 28px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(15, 23, 42, .24);
+            border-top: 5px solid #14b8a6;
+            transform: translateY(12px) scale(.97);
+            transition: transform .28s ease;
+        }
+
+        .contact-popup.show .contact-popup-card {
+            transform: translateY(0) scale(1);
+        }
+
+        .contact-popup-close {
+            position: absolute;
+            top: 12px;
+            right: 13px;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #64748b;
+            cursor: pointer;
+            font-size: 17px;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .contact-popup-close:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .contact-popup-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 18px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #e7f8f4;
+            color: #14b8a6;
+            border: 7px solid #d2f4ee;
+            font-size: 34px;
+        }
+
+        .contact-popup-card h3 {
+            margin: 0 0 10px;
+            color: #0f172a;
+            font-size: clamp(22px, 4vw, 28px);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .contact-popup-card p {
+            margin: 0 auto 20px;
+            max-width: 350px;
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .contact-popup-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 auto 22px;
+            padding: 13px 15px;
+            max-width: 350px;
+            text-align: left;
+            border-radius: 12px;
+            background: #f8fafc;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .contact-popup-note i {
+            flex: 0 0 auto;
+            color: #14b8a6;
+            font-size: 17px;
+        }
+
+        .contact-popup-ok {
+            width: 100%;
+            min-height: 46px;
+            border: 0;
+            border-radius: 10px;
+            background: #14b8a6;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .2s ease, filter .2s ease;
+        }
+
+        .contact-popup-ok:hover {
+            filter: brightness(.95);
+            transform: translateY(-1px);
+        }
+
+        .contact-popup-ok:focus-visible,
+        .contact-popup-close:focus-visible {
+            outline: 3px solid rgba(20, 184, 166, .35);
+            outline-offset: 2px;
+        }
+
+        .contact-popup-error {
+            background: #fff1f2;
+            color: #e11d48;
+            border-color: #ffe4e6;
+        }
+
+        body.dark-mode .contact-popup-card {
+            background: #111827;
+            border-color: #14b8a6;
+        }
+
+        body.dark-mode .contact-popup-card h3 {
+            color: #f8fafc;
+        }
+
+        body.dark-mode .contact-popup-card p {
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .contact-popup-note {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .contact-popup-close {
+            color: #94a3b8;
+        }
+
+        body.dark-mode .contact-popup-close:hover {
+            background: #334155;
+            color: #f8fafc;
+        }
+
+        body.dark-mode .contact-popup-error {
+            background: rgba(225, 29, 72, .16);
+            color: #fb7185;
+            border-color: rgba(225, 29, 72, .28);
+        }
+
+        @media (max-width: 480px) {
+            .contact-popup {
+                padding: 16px;
+            }
+
+            .contact-popup-card {
+                padding: 30px 20px 22px;
+                border-radius: 16px;
+            }
+
+            .contact-popup-icon {
+                width: 68px;
+                height: 68px;
+                font-size: 30px;
+            }
+
+            .contact-popup-card h3 {
+                font-size: 22px;
+            }
+
+            .contact-popup-card p {
+                font-size: 14px;
+            }
+        }
 
 </style>
 </head>
@@ -590,7 +794,7 @@ body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background
                     <div class="relative bg-[#f8f8f7] p-3 rounded-3xl border border-slate-200 shadow-xl">
                         <img src="photo.png"
                              alt="Riyaz Khatiwada"
-                             class="w-full aspect-square object-cover rounded-2xl hover-image"
+                             class="w-full aspect-square object-cover rounded-2xl hover-image protected-photo" draggable="false"
                              onerror="this.src='image.png'">
                     </div>
                     <div class="absolute -bottom-5 -left-5 bg-[#f8f8f7] border border-slate-200 rounded-xl hover-lift px-5 py-4 shadow-lg">
@@ -836,13 +1040,13 @@ body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background
                         </span>
                     </a>
 
-                    <a href="tel:9764478727" class="hover-lift flex items-center gap-4 group">
+                    <a href="tel:9764478727" class="hover-lift flex items-center gap-4 group protected-phone" aria-label="Call phone number">
                         <span class="w-11 h-11 rounded-lg bg-[#f8f8f7]/10 flex items-center justify-center text-blue-400">
                             <i class="fa-solid fa-phone"></i>
                         </span>
                         <span>
                             <span class="block text-xs text-slate-500">Phone</span>
-                            <span class="font-medium group-hover:text-blue-400 transition">9764478727</span>
+                            <span class="font-medium group-hover:text-blue-400 transition protected-phone" aria-label="Phone number">9764478727</span>
                         </span>
                     </a>
 
@@ -870,22 +1074,22 @@ body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background
             </div>
 
             <div class="lg:col-span-7 reveal">
-                  <form action="https://formspree.io/f/xqpknpdw" method="POST";
-                      class="bg-[#f8f8f7] text-slate-900 rounded-2xl hover-lift p-7 sm:p-9 space-y-5 hover-lift">
+                  <form id="contact-form" action="https://formspree.io/f/xqpknpdw" method="POST"
+                      class="bg-[#f8f8f7] text-slate-900 rounded-2xl hover-lift p-7 sm:p-9 space-y-5">
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-semibold mb-2">Name</label>
-                            <input type="text" name="name" placeholder="Your name required ..." required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                            <input type="text" name="name" placeholder="Your name" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2">Email</label>
-                            <input type="email" name="email" placeholder="you@example.com" required... required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                            <input type="email" name="email" placeholder="you@example.com" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-semibold mb-2">Subject</label>
-                        <input type="text" name="subject" placeholder="How can I help?" required ... required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                        <input type="text" name="subject" placeholder="How can I help?" required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
                     </div>
 
                     <div>
@@ -893,10 +1097,36 @@ body.dark-mode{background:#0b1120;color:#e5e7eb}body.dark-mode header{background
                         <textarea name="message" rows="5" placeholder="Write your message..." required class="hover-lift w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:border-blue-500 resize-none"></textarea>
                     </div>
 
-                    <button class="hover-lift w-full py-3.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition" type="submit">
+                    <button id="contact-submit" class="hover-lift w-full py-3.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition" type="submit">
                         Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
                     </button>
+                    <p id="form-status" class="hidden" role="status" aria-live="polite"></p>
                 </form>
+
+                <!-- Contact form success/error popup -->
+                <div id="contact-popup" class="contact-popup" aria-hidden="true">
+                    <div class="contact-popup-card" role="dialog" aria-modal="true" aria-labelledby="contact-popup-title">
+                        <button type="button" id="contact-popup-close" class="contact-popup-close" aria-label="Close message">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <div id="contact-popup-icon" class="contact-popup-icon" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <h3 id="contact-popup-title">Your submission is successful!</h3>
+                        <p id="contact-popup-message">
+                            Your message has been received successfully. I’ll review it and get back to you shortly.
+                        </p>
+
+                        <div class="contact-popup-note">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Thank you for reaching out. I appreciate your message.</span>
+                        </div>
+
+                        <button type="button" id="contact-popup-ok" class="contact-popup-ok">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -926,7 +1156,132 @@ document.addEventListener('DOMContentLoaded', function () {
   const data=Array.from(document.querySelectorAll('section[id]')).map(s=>({id:s.id,title:(s.querySelector('h1,h2,h3')||{}).textContent?.trim()||s.id,text:(s.innerText||'').replace(/\s+/g,' ').trim()}));
   function search(q){if(!results)return;q=q.trim().toLowerCase();if(!q){results.innerHTML='<p class="search-hint">Search About, Skills, Projects, Education, Interests or Contact.</p>';return}const m=data.filter(a=>a.text.toLowerCase().includes(q));if(!m.length){results.innerHTML='<p class="search-hint">No matching section found. Try another keyword.</p>';return}results.innerHTML=m.map(a=>'<button class="search-result" type="button" data-target="'+a.id+'"><strong>'+a.title+'</strong><span>'+a.text.slice(Math.max(0,a.text.toLowerCase().indexOf(q)-30),a.text.toLowerCase().indexOf(q)+q.length+70)+'</span></button>').join('');results.querySelectorAll('.search-result').forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});closeSearch()}))}
   if(input)input.addEventListener('input',()=>search(input.value));
+
+  // Submit the contact form with Formspree without leaving this website.
+  const contactForm = document.getElementById('contact-form');
+  const contactSubmit = document.getElementById('contact-submit');
+  const formStatus = document.getElementById('form-status');
+  const contactPopup = document.getElementById('contact-popup');
+  const contactPopupClose = document.getElementById('contact-popup-close');
+  const contactPopupOk = document.getElementById('contact-popup-ok');
+  const contactPopupTitle = document.getElementById('contact-popup-title');
+  const contactPopupMessage = document.getElementById('contact-popup-message');
+  const contactPopupIcon = document.getElementById('contact-popup-icon');
+  const contactPopupNote = document.querySelector('.contact-popup-note span');
+
+  function showContactPopup(success, message) {
+    if (!contactPopup) return;
+
+    if (success) {
+      contactPopupTitle.textContent = 'Your submission is successful!';
+      contactPopupMessage.textContent =
+        'Your message has been received successfully. I’ll review it and get back to you shortly.';
+      contactPopupNote.textContent =
+        'Thank you for reaching out. I appreciate your message.';
+      contactPopupIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+      contactPopupIcon.className = 'contact-popup-icon';
+    } else {
+      contactPopupTitle.textContent = 'Unable to send your message';
+      contactPopupMessage.textContent =
+        message || 'Something went wrong while sending your message. Please try again.';
+      contactPopupNote.textContent =
+        'Please check your connection and try submitting the form again.';
+      contactPopupIcon.innerHTML =
+        '<i class="fa-solid fa-triangle-exclamation"></i>';
+      contactPopupIcon.className =
+        'contact-popup-icon contact-popup-error';
+    }
+
+    contactPopup.classList.add('show');
+    contactPopup.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('popup-open');
+    setTimeout(() => contactPopupOk?.focus(), 80);
+  }
+
+  function closeContactPopup() {
+    if (!contactPopup) return;
+    contactPopup.classList.remove('show');
+    contactPopup.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('popup-open');
+  }
+
+  contactPopupClose?.addEventListener('click', closeContactPopup);
+  contactPopupOk?.addEventListener('click', closeContactPopup);
+
+  contactPopup?.addEventListener('click', function (e) {
+    if (e.target === contactPopup) closeContactPopup();
+  });
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!contactSubmit) return;
+
+      contactSubmit.disabled = true;
+      contactSubmit.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Sending...';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          if (formStatus) formStatus.className = 'hidden';
+          showContactPopup(true);
+        } else {
+          let errorMessage =
+            'Your message could not be submitted right now. Please try again.';
+
+          try {
+            const data = await response.json();
+            if (data?.errors?.length) {
+              errorMessage = data.errors.map(item => item.message).join(' ');
+            }
+          } catch (_) {}
+
+          showContactPopup(false, errorMessage);
+        }
+      } catch (error) {
+        showContactPopup(
+          false,
+          'We couldn’t connect to the form service. Please check your internet connection and try again.'
+        );
+      } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.innerHTML =
+          'Send Message <i class="fa-solid fa-paper-plane ml-2"></i>';
+      }
+    });
+  }
+
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();panel?.classList.contains('hidden')?openSearch():closeSearch()}});
+
+  // Discourage casual copying/downloading of the protected phone number and photo.
+  document.addEventListener('contextmenu',e=>{
+    if(e.target.closest('.protected-photo,.protected-phone')) e.preventDefault();
+  });
+
+  document.addEventListener('dragstart',e=>{
+    if(e.target.closest('.protected-photo')) e.preventDefault();
+  });
+
+  document.addEventListener('selectstart',e=>{
+    if(e.target.closest('.protected-photo,.protected-phone')) e.preventDefault();
+  });
+
+  document.addEventListener('copy',e=>{
+    const selection=window.getSelection()?.toString()||'';
+    if(selection.includes('9764478727')) e.preventDefault();
+  });
+
   if('IntersectionObserver'in window){const o=new IntersectionObserver((es,ob)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');ob.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>o.observe(e))}else document.querySelectorAll('.reveal').forEach(e=>e.classList.add('active'));
   const sections=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nav-link');addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(scrollY>=s.offsetTop-140)c=s.id});links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+c))},{passive:true});
 });
